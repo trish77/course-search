@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   del = require('del'),
   uglify = require('gulp-uglify'),
   cleanCSS = require('gulp-clean-css'),
+  concat = require("gulp-concat"),
   rename = require("gulp-rename"),
   merge = require('merge-stream'),
   htmlreplace = require('gulp-html-replace'),
@@ -47,7 +48,9 @@ gulp.task('vendor:build', function() {
   var jsStream = gulp.src([
     './assets/js/vendor/bootstrap.bundle.min.js',
     './assets/js/vendor/jquery.slim.min.js',
-    './assets/js/vendor/popper.min.js'
+    './assets/js/vendor/popper.min.js',
+    './assets/js/vendor/bootstrap-dropdownhover.min.js'
+
   ])
     .pipe(gulp.dest('./dist/assets/js/vendor'));
   var fontStream = gulp.src(['./assets/fonts/font-awesome/**/*.*']).pipe(gulp.dest('./dist/assets/fonts/font-awesome'));
@@ -73,7 +76,7 @@ gulp.task('scss', gulp.series('bootstrap:scss', function compileScss() {
 // Minify CSS
 gulp.task('css:minify', gulp.series('scss', function cssMinify() {
   return gulp.src("./assets/css/app.css")
-    .pipe(cleanCSS())
+  .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min'
     }))
@@ -134,4 +137,4 @@ gulp.task("build", gulp.series(gulp.parallel('css:minify', 'js:minify', 'vendor'
 }));
 
 // Default task
-gulp.task("default", gulp.series("clean", 'build', 'replaceHtmlBlock'));
+gulp.task("default", gulp.series("dev", "clean", 'build', 'replaceHtmlBlock'));

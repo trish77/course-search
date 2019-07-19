@@ -1,14 +1,14 @@
 {
-  "name": "bootstrap-4-sass-gulp-4-boilerplate",
+  "name": "course search",
   "version": "1.1.0",
-  "description": "A Bootstrap 4.3.1 boilerplate with sass and gulp 4",
+  "description": "HLC Course Search",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JayeshLab/bootstrap-4-sass-gulp-4-boilerplate.git"
+    "url": ""
   },
   "keywords": [
     "bootstrap",
@@ -20,12 +20,7 @@
     "boilerplate",
     "stater"
   ],
-  "author": "Jayesh Vachhani",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JayeshLab/bootstrap-4-sass-gulp-4-boilerplate/issues"
-  },
-  "homepage": "https://github.com/JayeshLab/bootstrap-4-sass-gulp-4-boilerplate#readme",
+  "homepage": "",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "font-awesome": "4.7.0",
